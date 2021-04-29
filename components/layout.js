@@ -6,7 +6,7 @@ export default (Page, title = 'This is the default title') => {
   return class AnyPage extends React.Component {
     render() {
       return (
-        <div style={{ margin: '16px' }}>
+        <div>
           <Head>
             <title>{title}</title>
             <meta charSet="utf-8" />
@@ -15,7 +15,7 @@ export default (Page, title = 'This is the default title') => {
               content="initial-scale=1.0, width=device-width"
             />
           </Head>
-
+{/*
           <header
             style={{
               height: '30px',
@@ -24,15 +24,15 @@ export default (Page, title = 'This is the default title') => {
               background: '#f8f8f8',
             }}
           >
-          </header>
+          </header> */}
 
           <RowCenterDiv>
             <Page {...this.props} />
           </RowCenterDiv>
 
-          <footer>
+          {/* <footer>
             <RowCenterDiv>{'Copyright © 2020 XXX Inc.'}</RowCenterDiv>
-          </footer>
+          </footer> */}
         </div>
       )
     }

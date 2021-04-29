@@ -13,6 +13,24 @@ body {
 	background-color: @dark-light;
 	display: flex;
 	align-items: center;
+	padding: 0 20px;
+	.logo{
+		flex: 1;
+		a{
+			display: block;
+			height: 24px;
+		}
+	}
+	.data-filter{
+		flex: 1;
+		display: flex;
+    justify-content: center;
+	}
+	.top-nav{
+		flex: 1;
+		display: flex;
+    justify-content: flex-end;
+	}
 }
 .body-wrapper {
 	padding: 20px;
@@ -31,6 +49,7 @@ body {
 .top-nav{
 	ul{
 		padding: 0;
+		margin: 0;
 		list-style-type: none;
 		display: flex;
 		li{

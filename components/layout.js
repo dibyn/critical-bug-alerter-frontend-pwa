@@ -1,11 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
 import { CustomLink, RowCenterDiv } from './customComponent'
-import { Radio, Dropdown } from 'antd'
+import { Radio, Dropdown, Input, Button } from 'antd'
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
 
 export default (Page, title = 'This is the default title') => {
-	const settingOpt = <div className="setting-body">Time to trigger IoT</div>
+	const settingOpt = <div className="setting-body">
+		<p>Waiting time to trigger IoT device after bug appear</p>
+		<Input />
+		<Button>Save</Button>
+	</div>
 	return class AnyPage extends React.Component {
 		render() {
 			return (

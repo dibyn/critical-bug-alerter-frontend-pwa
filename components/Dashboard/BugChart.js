@@ -70,6 +70,7 @@ const BugChart = () => (
 				}
 			]
 		}}
+		containerProps = {{ className: 'chartContainer' }}
 	/>
 )
 

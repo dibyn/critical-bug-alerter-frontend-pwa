@@ -1,3 +1,4 @@
+import React from 'react'
 import TableOfBugs from 'components/Dashboard/TableOfBugs'
 import BugChart from './BugChart'
 const index = () => {

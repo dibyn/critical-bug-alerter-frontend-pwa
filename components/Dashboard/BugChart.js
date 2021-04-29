@@ -7,9 +7,15 @@ const BugChart = () => (
 		highcharts={Highcharts}
 		options={{
 			title: {
-				text: 'Bug Occurences'
+				text: 'Bug Occurences',
+				align: 'left',
+				 style: {
+      fontSize: '16px',
+			padding: '10px'
+   }
 			},
 			xAxis: {
+				type: 'datetime',
 				categories: [
 					'05:00',
 					'06:00',
@@ -36,19 +42,14 @@ const BugChart = () => (
 					'03:00',
 					'04:00',
 					'05:00'
-				]
+				],
 			},
 			yAxis: {
 				title: {
-					text: 'Temperature (°C)'
+					text: ''
 				},
-				plotLines: [
-					{
-						value: 0,
-						width: 1,
-						color: '#EB5757'
-					}
-				]
+				 gridLineDashStyle: 'dot',
+				 gridLineWidth: 2
 			},
 			tooltip: {
 				valueSuffix: '°C'

@@ -16,6 +16,7 @@ body {
 }
 .global-header {
 	height: 65px;
+	z-index: 99;
 	background-color: @dark-light;
 	display: flex;
 	align-items: center;
@@ -69,8 +70,19 @@ body {
 	.chart-box {
 		background-color: @dark-light;
 		margin-bottom: 20px;
+		padding: 20px 20px 0;
 		.highcharts-background{
 			fill: transparent;
+		}
+		.highcharts-grid-line{
+			stroke: #262731;
+		}
+		.highcharts-title{
+			fill: @white !important;
+			color: @white !important;
+		}
+		.highcharts-credits{
+			display: none;
 		}
 	}
 	.table-box {
@@ -153,5 +165,12 @@ footer{
 	.row-center{
 		text-align: center;
 		color: @light;
+	}
+}
+.ant-btn{
+	border-radius: 4px;
+	&.ant-btn-primary{
+		background-color: @blue;
+		border-color: @blue;
 	}
 }

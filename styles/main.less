@@ -1,6 +1,45 @@
-.row-center {
+// color variables
+@dark: #181a23;
+@dark-light: #1f2029;
+@light: #bcbcbf;
+// =========
+html,
+body {
+	background-color: @dark;
+	font-family: 'Poppins', sans-serif;
+}
+.global-header {
+	height: 65px;
+	background-color: @dark-light;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
 	align-items: center;
+}
+.body-wrapper {
+	padding: 20px;
+	.chart-box {
+		background-color: #f33;
+	}
+	.table-box {
+		background-color: #433;
+	}
+}
+.data-filter {
+	.ant-radio-wrapper {
+		color: @light;
+	}
+}
+.top-nav{
+	ul{
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		li{
+			a{
+				display: block;
+				padding: 10px;
+				line-height: normal;
+				color: @light;
+			}
+		}
+	}
 }

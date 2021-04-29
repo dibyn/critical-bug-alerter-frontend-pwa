@@ -1,10 +1,9 @@
 import App from 'next/app'
 import { Provider } from 'react-redux'
-import React from 'react'
 import withRedux from 'next-redux-wrapper'
 import withReduxSaga from 'next-redux-saga'
-import store from '../redux/store'
-import '../styles/index.less'
+import store from 'redux/store'
+import 'styles/index.less'
 import { fromJS } from 'immutable'
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

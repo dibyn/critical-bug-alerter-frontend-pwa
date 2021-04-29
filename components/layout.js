@@ -7,8 +7,8 @@ import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
 export default (Page, title = 'This is the default title') => {
 	const settingOpt = <div className="setting-body">
 		<p>Waiting time to trigger IoT device after bug appear</p>
-		<Input />
-		<Button>Save</Button>
+		<Input suffix="Sec"/>
+		<Button type='primary'>Save</Button>
 	</div>
 	return class AnyPage extends React.Component {
 		render() {

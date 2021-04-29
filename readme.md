@@ -1,4 +1,4 @@
-# nextjs-redux-saga-antd-eslint-boilerplate
+# CRITICAL BUG ALERTER
 
 ## Tech Stack
 - Redux

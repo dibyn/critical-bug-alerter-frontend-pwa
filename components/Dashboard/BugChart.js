@@ -9,10 +9,9 @@ const BugChart = () => (
 			title: {
 				text: 'Bug Occurences',
 				align: 'left',
-				 style: {
-      fontSize: '16px',
-			padding: '10px'
-   }
+				style: {
+					fontSize: '16px',
+				}
 			},
 			xAxis: {
 				type: 'datetime',
@@ -42,14 +41,22 @@ const BugChart = () => (
 					'03:00',
 					'04:00',
 					'05:00'
-				],
+				]
 			},
+			plotOptions: {
+				series: {
+					color: '#EB5757'
+				}
+			},
+			 legend: {
+        enabled: false
+    },
 			yAxis: {
 				title: {
 					text: ''
 				},
-				 gridLineDashStyle: 'dot',
-				 gridLineWidth: 2
+				gridLineDashStyle: 'dot',
+				gridLineWidth: 2
 			},
 			tooltip: {
 				valueSuffix: '°C'

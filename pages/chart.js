@@ -1,1 +1,2 @@
-export default () => <div>I am chart</div>
+import BugChart from "components/Dashboard/BugChart";
+export default () => < BugChart />

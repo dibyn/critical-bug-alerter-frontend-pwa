@@ -1,6 +1,6 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import Head from 'next/head'
-import { CustomLink, RowCenterDiv } from './customComponent'
+import { RowCenterDiv } from './customComponent'
 import { Radio, Dropdown, Input, Button } from 'antd'
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
 

@@ -1,4 +1,20 @@
+import React from 'react'
 import { Table, Select } from 'antd'
+const DropdownSelect = ({ status }) => (
+	<Select
+		defaultValue={status}
+		style={{ width: 146 }}
+		dropdownClassName="status-list"
+		className="status-in-progress"
+	>
+		{['Not Resolved', 'In Progress', 'Acknowledged', 'Resolved'].map(v => (
+			<Option value={v} key={v}>
+				{v}
+			</Option>
+		))}
+	</Select>
+)
+const handleRender = status => <DropdownSelect status={status} />
 const Option = Select.Option
 const columns = [
 	{
@@ -25,19 +41,7 @@ const columns = [
 		title: 'Status',
 		key: 'status',
 		dataIndex: 'status',
-		render: status => (
-			<>
-				<Select defaultValue={status} style={{ width: 146 }} dropdownClassName='status-list' className='status-in-progress'>
-					{['Not Resolved', 'In Progress', 'Acknowledged', 'Resolved'].map(
-						v => (
-							<Option value={v} key={v}>
-								{v}
-							</Option>
-						)
-					)}
-				</Select>
-			</>
-		)
+		render: handleRender
 	}
 ]
 const data = [

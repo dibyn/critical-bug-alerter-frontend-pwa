@@ -53,7 +53,7 @@ export default (Page, title = 'This is the default title') => {
 						<div className="data-filter">
 							<Radio.Group>
 								<Radio value={1} checked>
-									Last 24 Hrs
+									Last 24 hrs
 								</Radio>
 								<Radio value={2}>Last 7 days</Radio>
 							</Radio.Group>

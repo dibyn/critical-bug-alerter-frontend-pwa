@@ -24,9 +24,6 @@ export default (Page, title = 'This is the default title') => {
               background: '#f8f8f8',
             }}
           >
-            <RowCenterDiv>
-              <CustomLink title={'Home'} href={'/'} />
-            </RowCenterDiv>
           </header>
 
           <RowCenterDiv>

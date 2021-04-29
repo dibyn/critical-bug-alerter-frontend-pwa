@@ -6,7 +6,6 @@ import withReduxSaga from 'next-redux-saga'
 import store from '../redux/store'
 import './index.less'
 import { fromJS } from 'immutable'
-
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     const pageProps = Component.getInitialProps
@@ -15,7 +14,6 @@ class MyApp extends App {
     // Anything returned here can be accessed by the client
     return { pageProps }
   }
-
   render() {
     // pageProps that were returned  from 'getInitialProps' are stored in the props i.e. pageprops
     const { Component, pageProps, store } = this.props
@@ -26,7 +24,6 @@ class MyApp extends App {
     )
   }
 }
-
 // withRedux wrapper that passes the store to the App Component
 export default withRedux(store, {
   serializeState: state => state.toJS(),

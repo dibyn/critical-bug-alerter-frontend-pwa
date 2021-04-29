@@ -2,6 +2,7 @@
 @dark: #181a23;
 @dark-light: #1f2029;
 @light: #bcbcbf;
+@white: #ffffff;
 // =========
 html,
 body {
@@ -15,24 +16,24 @@ body {
 	align-items: center;
 	padding: 0 20px;
 	position: fixed;
-  width: 100%;
+	width: 100%;
 	box-shadow: 0 0px 7px #00000059;
-	.logo{
+	.logo {
 		flex: 1;
-		a{
+		a {
 			display: block;
 			height: 24px;
 		}
 	}
-	.data-filter{
+	.data-filter {
 		flex: 1;
 		display: flex;
-    justify-content: center;
+		justify-content: center;
 	}
-	.top-nav{
+	.top-nav {
 		flex: 1;
 		display: flex;
-    justify-content: flex-end;
+		justify-content: flex-end;
 	}
 }
 
@@ -41,14 +42,14 @@ body {
 		color: @light;
 	}
 }
-.top-nav{
-	ul{
+.top-nav {
+	ul {
 		padding: 0;
 		margin: 0;
 		list-style-type: none;
 		display: flex;
-		li{
-			a{
+		li {
+			a {
 				display: block;
 				padding: 10px 15px;
 				line-height: normal;
@@ -67,5 +68,17 @@ body {
 	.table-box {
 		background-color: @dark-light;
 		height: 750px;
+	}
+}
+.ant-table {
+	background-color: @dark-light;
+	color: @white;
+	.ant-table-tbody > tr > td {
+		border-bottom: 8px solid @dark;
+	}
+	.ant-table-thead > tr > th{
+		background-color: @dark;
+		color: @light;
+		border-bottom: 0;
 	}
 }

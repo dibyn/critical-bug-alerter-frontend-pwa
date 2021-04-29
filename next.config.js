@@ -1,3 +1,5 @@
+const withLess = require('@zeit/next-less')
+
 module.exports = {
   webpack: (config, { dev }) => {
     if (dev) {
@@ -15,8 +17,6 @@ module.exports = {
     return config
   },
 }
-
-const withLess = require('@zeit/next-less')
 
 module.exports = withLess({
   lessLoaderOptions: {

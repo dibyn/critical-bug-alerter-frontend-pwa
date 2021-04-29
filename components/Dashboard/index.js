@@ -4,7 +4,6 @@ const index = () => {
 	return (
 		<div className="body-wrapper">
 			<div className="chart-box">
-				Chart
 				<BugChart />
 			</div>
 			<div className="table-box">

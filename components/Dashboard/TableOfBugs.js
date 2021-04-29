@@ -27,7 +27,7 @@ const columns = [
 		dataIndex: 'status',
 		render: status => (
 			<>
-				<Select defaultValue={status} style={{ width: 146 }} dropdownClassName='status-list' className='status-not-resolved'>
+				<Select defaultValue={status} style={{ width: 146 }} dropdownClassName='status-list' className='status-in-progress'>
 					{['Not Resolved', 'In Progress', 'Acknowledged', 'Resolved'].map(
 						v => (
 							<Option value={v} key={v}>

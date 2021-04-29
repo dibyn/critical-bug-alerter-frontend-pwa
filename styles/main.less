@@ -4,6 +4,10 @@
 @light: #bcbcbf;
 @white: #ffffff;
 @red: #EB5757;
+@green: #6FC476;
+@blue: #2D5FE0;
+@orange: #FE9801;
+
 // =========
 html,
 body {
@@ -65,6 +69,9 @@ body {
 		background-color: @dark-light;
 		height: 350px;
 		margin-bottom: 20px;
+		.highcharts-background{
+			fill: transparent;
+		}
 	}
 	.table-box {
 		background-color: @dark-light;
@@ -73,7 +80,7 @@ body {
 }
 .ant-table {
 	background-color: @dark-light;
-	color: @white;
+	color: @light;
 	.ant-table-tbody > tr > td {
 		border-bottom: 8px solid @dark;
 	}
@@ -103,3 +110,31 @@ body {
 		color: @red !important;
 	}
 }
+.status-resolved{
+	color: @green !important;
+	.ant-select-selector{
+		border-color: @green !important;
+	}
+	.ant-select-arrow{
+		color: @green !important;
+	}
+}
+.status-acknowledged{
+	color: @blue!important;
+	.ant-select-selector{
+		border-color: @blue!important;
+	}
+	.ant-select-arrow{
+		color: @blue!important;
+	}
+}
+.status-in-progress{
+	color: @orange !important;
+	.ant-select-selector{
+		border-color: @orange !important;
+	}
+	.ant-select-arrow{
+		color: @orange !important;
+	}
+}
+

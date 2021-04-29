@@ -1,11 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
 import { CustomLink, RowCenterDiv } from './customComponent'
-import { Radio } from 'antd'
-import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';
-
+import { Radio, Dropdown } from 'antd'
+import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
 
 export default (Page, title = 'This is the default title') => {
+	const settingOpt = <div className="setting-body">Time to trigger IoT</div>
 	return class AnyPage extends React.Component {
 		render() {
 			return (
@@ -17,8 +17,16 @@ export default (Page, title = 'This is the default title') => {
 							name="viewport"
 							content="initial-scale=1.0, width=device-width"
 						/>
-            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
-						<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png" />
+						<link
+							href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+							rel="stylesheet"
+						/>
+						<link
+							rel="icon"
+							type="image/png"
+							sizes="16x16"
+							href="/images/favicon.png"
+						/>
 					</Head>
 
 					<header className="global-header">
@@ -44,16 +52,31 @@ export default (Page, title = 'This is the default title') => {
 						</div>
 						<div className="data-filter">
 							<Radio.Group>
-								<Radio value={1} checked>Last 24 Hrs</Radio>
+								<Radio value={1} checked>
+									Last 24 Hrs
+								</Radio>
 								<Radio value={2}>Last 7 days</Radio>
 							</Radio.Group>
 						</div>
-            <div className='top-nav'>
-              <ul>
-                <li><a href='#'><SettingOutlined /></a></li>
-                <li><a href='#'><LogoutOutlined /></a></li>
-              </ul>
-            </div>
+						<div className="top-nav">
+							<ul>
+								<li>
+									<Dropdown overlay={settingOpt} trigger={['click']}>
+										<a
+											className="ant-dropdown-link"
+											onClick={e => e.preventDefault()}
+										>
+											<SettingOutlined />
+										</a>
+									</Dropdown>
+								</li>
+								<li>
+									<a href="#">
+										<LogoutOutlined />
+									</a>
+								</li>
+							</ul>
+						</div>
 					</header>
 
 					<RowCenterDiv>

@@ -17,7 +17,8 @@ export default (Page, title = 'This is the default title') => {
 							name="viewport"
 							content="initial-scale=1.0, width=device-width"
 						/>
-            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+						<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png" />
 					</Head>
 
 					<header className="global-header">

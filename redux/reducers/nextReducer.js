@@ -1,5 +1,5 @@
-import * as actionTypes from '../../constants/next.constants'
-import { NextState } from '../../constants/models'
+import * as actionTypes from 'constants/next.constants'
+import { NextState } from 'constants/models'
 import { handleActions } from 'redux-actions'
 
 export default handleActions(

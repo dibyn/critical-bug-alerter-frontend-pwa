@@ -83,9 +83,9 @@ export default (Page, title = 'This is the default title') => {
 						<Page {...this.props} />
 					</RowCenterDiv>
 
-					{/* <footer>
-            <RowCenterDiv>{'Copyright © 2020 XXX Inc.'}</RowCenterDiv>
-          </footer> */}
+					<footer>
+            <RowCenterDiv>{'Developed by Team Bravo 2021'}</RowCenterDiv>
+          </footer>
 				</div>
 			)
 		}

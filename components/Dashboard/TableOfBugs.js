@@ -27,7 +27,7 @@ const columns = [
 		dataIndex: 'status',
 		render: status => (
 			<>
-				<Select defaultValue={status} style={{ width: 120 }}>
+				<Select defaultValue={status} style={{ width: 146 }} dropdownClassName='status-list' className='status-not-resolved'>
 					{['Not Resolved', 'In Progress', 'Acknowledged', 'Resolved'].map(
 						v => (
 							<Option value={v} key={v}>
@@ -45,7 +45,7 @@ const data = [
 		key: '1',
 		id: '#1',
 		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00PM',
+		when: 'April 23, 01:00 PM',
 		description:
 			'Progressively promote out-of-the-box results without focused initiatives appropriately',
 		status: 'Not Resolved'
@@ -54,7 +54,7 @@ const data = [
 		key: '2',
 		id: '#2',
 		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00PM',
+		when: 'April 23, 01:00 PM',
 		description:
 			'Progressively promote out-of-the-box results without focused initiatives appropriately',
 		status: 'In Progress'
@@ -63,7 +63,7 @@ const data = [
 		key: '3',
 		id: '#3',
 		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00PM',
+		when: 'April 23, 01:00 PM',
 		description:
 			'Progressively promote out-of-the-box results without focused initiatives appropriately',
 		status: 'Acknowledged'
@@ -72,7 +72,43 @@ const data = [
 		key: '4',
 		id: '#4',
 		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00PM',
+		when: 'April 23, 01:00 PM',
+		description:
+			'Progressively promote out-of-the-box results without focused initiatives appropriately',
+		status: 'Resolved'
+	},
+	{
+		key: '5',
+		id: '#5',
+		name: 'Session id of data files does not match S3key',
+		when: 'April 23, 01:00 PM',
+		description:
+			'Progressively promote out-of-the-box results without focused initiatives appropriately',
+		status: 'Not Resolved'
+	},
+	{
+		key: '6',
+		id: '#6',
+		name: 'Session id of data files does not match S3key',
+		when: 'April 23, 01:00 PM',
+		description:
+			'Progressively promote out-of-the-box results without focused initiatives appropriately',
+		status: 'In Progress'
+	},
+	{
+		key: '7',
+		id: '#7',
+		name: 'Session id of data files does not match S3key',
+		when: 'April 23, 01:00 PM',
+		description:
+			'Progressively promote out-of-the-box results without focused initiatives appropriately',
+		status: 'Acknowledged'
+	},
+	{
+		key: '8',
+		id: '#8',
+		name: 'Session id of data files does not match S3key',
+		when: 'April 23, 01:00 PM',
 		description:
 			'Progressively promote out-of-the-box results without focused initiatives appropriately',
 		status: 'Resolved'

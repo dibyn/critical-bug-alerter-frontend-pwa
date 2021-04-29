@@ -3,6 +3,7 @@
 @dark-light: #1f2029;
 @light: #bcbcbf;
 @white: #ffffff;
+@red: #EB5757;
 // =========
 html,
 body {
@@ -80,5 +81,25 @@ body {
 		background-color: @dark;
 		color: @light;
 		border-bottom: 0;
+	}
+
+}
+.ant-table-tbody > tr.ant-table-row:hover > td{
+	background: #ff333324;
+}
+.ant-select{
+	.ant-select-selector{
+		border: 1px solid #fff !important;
+		border-radius: 50px !important;
+		background-color: transparent !important;
+	}
+}
+.status-not-resolved{
+	color: @red !important;
+	.ant-select-selector{
+		border-color: @red !important;
+	}
+	.ant-select-arrow{
+		color: @red !important;
 	}
 }

@@ -2,7 +2,6 @@ import { Component } from 'react'
 import Head from 'next/head'
 import { PageHeader, Button } from 'antd'
 import { RowCenterDiv } from './customComponent'
-
 export default (Page, title = 'This is the default title') => {
 	return class AnyPage extends Component {
 		render() {

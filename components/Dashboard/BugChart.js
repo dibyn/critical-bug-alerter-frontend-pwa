@@ -1,7 +1,9 @@
 import React from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-
+if (typeof window !== 'undefined') {
+	require('highcharts/modules/data')(Highcharts)
+}
 const BugChart = () => (
 	<HighchartsReact
 		highcharts={Highcharts}
@@ -41,13 +43,13 @@ const BugChart = () => (
 				{
 					// name: 'Session id of data files does not match S3key',
 					data: [
-						0,
+						12,
 						1,
 						0,
 						2,
+						6,
 						0,
-						0,
-						5,
+						11,
 						1,
 						0,
 						0,

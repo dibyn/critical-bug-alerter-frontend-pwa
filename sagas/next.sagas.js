@@ -1,5 +1,4 @@
 import { all, call, put, takeEvery } from 'redux-saga/effects'
-
 import * as actionTypes from 'constants/next.constants'
 import {
   fetchNextDataSuccess,

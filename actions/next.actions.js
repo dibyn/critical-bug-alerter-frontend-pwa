@@ -1,4 +1,4 @@
-import * as actionTypes from '../constants/next.constants'
+import * as actionTypes from 'constants/next.constants'
 
 export const fetchNextDataRequest = params => ({
   type: actionTypes.FETCH_NEXT_DATA_REQUEST,

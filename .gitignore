@@ -6,3 +6,4 @@ out
 yarn.lock
 package-lock.json
 *.DS_STORE
+.env

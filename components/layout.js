@@ -1,16 +1,18 @@
-import React from 'react'
+import { Component } from 'react'
 import Head from 'next/head'
 import { CustomLink, RowCenterDiv } from './customComponent'
 import { Radio, Dropdown, Input, Button } from 'antd'
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
 
-export default (Page, title = 'This is the default title') => {
-	const settingOpt = <div className="setting-body">
-		<p>Waiting time to trigger IoT device after bug appear</p>
-		<Input />
-		<Button>Save</Button>
-	</div>
-	return class AnyPage extends React.Component {
+export default (Page, title = 'Bug Stack') => {
+	const settingOpt = (
+		<div className="setting-body">
+			<p>Waiting time to trigger IoT device after bug appear</p>
+			<Input />
+			<Button>Save</Button>
+		</div>
+	)
+	return class AnyPage extends Component {
 		render() {
 			return (
 				<div>
@@ -22,17 +24,16 @@ export default (Page, title = 'This is the default title') => {
 							content="initial-scale=1.0, width=device-width"
 						/>
 						<link
-							href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
-							rel="stylesheet"
-						/>
-						<link
 							rel="icon"
 							type="image/png"
 							sizes="16x16"
-							href="/images/favicon.png"
+							href={'icons/favicon.png'}
+						/>
+						<link
+							href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+							rel="stylesheet"
 						/>
 					</Head>
-
 					<header className="global-header">
 						<div className="logo">
 							<a href="#">
@@ -82,14 +83,13 @@ export default (Page, title = 'This is the default title') => {
 							</ul>
 						</div>
 					</header>
-
 					<RowCenterDiv>
 						<Page {...this.props} />
 					</RowCenterDiv>
 
 					<footer>
-            <RowCenterDiv>{'Developed by Team Bravo 2021'}</RowCenterDiv>
-          </footer>
+						<RowCenterDiv>{'Developed by Team Bravo 2021'}</RowCenterDiv>
+					</footer>
 				</div>
 			)
 		}

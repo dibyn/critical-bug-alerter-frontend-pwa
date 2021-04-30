@@ -1,11 +1,21 @@
 import React from 'react'
 import MainHead from 'components/head'
-import { Form, Input, Button, Checkbox } from 'antd'
+import { Form, Input, Button, Checkbox, message } from 'antd'
+import Router from 'next/router'
 const Login = () => {
 	const onFinish = values => {
 		console.log('Success:', values)
+		if (
+			values.email === 'dibyn@bugstack.com' &&
+			values.password === 'bugStack1!'
+		) {
+			localStorage.setItem('authToken', '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d')
+			Router.push('/')
+		} else
+			message.error(
+				'Incorrect Email or Password!, please try again with correct credentials'
+			)
 	}
-
 	const onFinishFailed = errorInfo => {
 		console.log('Failed:', errorInfo)
 	}
@@ -35,25 +45,26 @@ const Login = () => {
 				</div>
 				<div className="ext-right">
 					<Form
-
 						name="basic"
 						initialValues={{
-							remember: true
+							remember: true,
+							email: 'dibyn@bugstack.com',
+							password: 'bugStack1!'
 						}}
 						onFinish={onFinish}
 						onFinishFailed={onFinishFailed}
 						layout={'vertical'}
 					>
 						<Form.Item
-							name="username"
+							name="email"
 							rules={[
 								{
 									required: true,
-									message: 'Please enter username!'
+									message: 'Please enter email!'
 								}
 							]}
 						>
-							<Input placeholder='Username'/>
+							<Input placeholder="email" />
 						</Form.Item>
 						<Form.Item
 							name="password"
@@ -64,7 +75,7 @@ const Login = () => {
 								}
 							]}
 						>
-							<Input.Password placeholder='Password'/>
+							<Input.Password placeholder="*********" />
 						</Form.Item>
 						<Form.Item name="remember" valuePropName="checked">
 							<Checkbox>Remember me</Checkbox>

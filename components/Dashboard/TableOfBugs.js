@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch, connect, useSelector } from 'react-redux'
+import moment from 'moment/moment'
+import { useDispatch, connect } from 'react-redux'
 import { Table, Select } from 'antd'
 import { changeStatusIssueRequest } from 'actions/bugStack.actions'
 const obj = {
@@ -52,9 +53,16 @@ const columns = [
 		key: 'name'
 	},
 	{
+		title: 'Level',
+		dataIndex: 'level',
+		key: 'level'
+	},
+	{
 		title: 'When',
 		dataIndex: 'created_at',
-		key: 'created_at'
+		key: 'created_at',
+		sorter: (a, b) => moment(a.last_login).unix() - moment(b.last_login).unix(),
+		sortOrder: 'descend'
 	},
 	{
 		title: 'Description',
@@ -74,7 +82,17 @@ const TableOfBugs = ({ issueList }) => (
 		loading={!issueList}
 		columns={columns}
 		dataSource={issueList}
-		pagination={false}
+		pagination={{
+			defaultPageSize: 10,
+			showSizeChanger: true,
+			responsive: true,
+			pageSizeOptions: [10, 50, 70, 90]
+		}}
+		scroll={{
+			y: 'calc(100vh - 200px)',
+			x: 500,
+			scrollToFirstRowOnChange: false
+		}}
 	/>
 )
 const mapStateToProps = state => ({

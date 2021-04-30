@@ -1,5 +1,6 @@
 const routes = require('./routes')
 const express = require('express')
+const compression = require('compression')
 const next = require('next')
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
@@ -9,6 +10,7 @@ const handler = routes.getRequestHandler(app)
 
 app.prepare().then(() => {
   const server = express()
+  server.use(compression())
   server.use(handler)
   server.get('*', (req, res) => {
     return handle(req, res)

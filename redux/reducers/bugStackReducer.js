@@ -4,9 +4,7 @@ import { handleActions } from 'redux-actions'
 export default handleActions(
 	{
 		[actionTypes.FETCH_ISSUE_LIST_SUCCESS]: (state, action) => {
-			return state.mergeIn(['bugStack'], {
-				issueList: action.data
-			})
+			return state.mergeIn(['issueList'], action.data)
 		},
 		[actionTypes.FETCH_ISSUE_LIST_FAILED]: (state, action) => {
 			return state.mergeIn(['bugStack'], {
@@ -30,7 +28,7 @@ export default handleActions(
 		},
 		[actionTypes.CHANGE_STATUS_ISSUE_FAILED]: (state, action) => {
 			return state.mergeIn(['bugStack'], {
-				changeIssueStatusError: action.error
+				changeIssueStatus: action.error
 			})
 		}
 	},

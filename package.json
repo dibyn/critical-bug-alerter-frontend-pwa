@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "NEXT_PUBLIC_API_URL = 'https://bug-alert-systemm.herokuapp.com' next start",
     "lint": "eslint ./components/** ./pages/** -c .eslintrc --fix --ext js,jsx"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "@zeit/next-less": "^1.0.1",
     "antd": "4.10.0",
     "axios": "^0.19.2",
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "highcharts": "^9.0.1",
     "highcharts-react-official": "^3.0.0",

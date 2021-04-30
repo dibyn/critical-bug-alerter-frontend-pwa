@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, connect, useSelector } from 'react-redux'
 import { Table, Select } from 'antd'
 import { changeStatusIssueRequest } from 'actions/bugStack.actions'
 const obj = {
@@ -8,7 +8,7 @@ const obj = {
 	Acknowledged: 'status-acknowledged',
 	Resolved: 'status-resolved'
 }
-const DropdownSelect = ({ status }) => {
+const DropdownSelect = ({ status, elements }) => {
 	const dispatch = useDispatch()
 	const [__status, handleChange] = useState(status)
 	return (
@@ -17,12 +17,13 @@ const DropdownSelect = ({ status }) => {
 			style={{ width: 146 }}
 			dropdownClassName="status-list"
 			className={obj[__status]}
-			onChange={value => {
-				handleChange(value)
+			onChange={statusValue => {
+				console.log(statusValue, 'value')
+				handleChange(statusValue)
 				dispatch(
 					changeStatusIssueRequest({
-						issueId: 2,
-						params: { status: 'In Progress' }
+						issueId: elements.id,
+						params: { status: statusValue.toLowerCase() }
 					})
 				)
 			}}
@@ -35,7 +36,9 @@ const DropdownSelect = ({ status }) => {
 		</Select>
 	)
 }
-const handleRender = status => <DropdownSelect status={status} />
+const handleRender = (status, __el) => (
+	<DropdownSelect status={status} elements={__el} />
+)
 const Option = Select.Option
 const columns = [
 	{
@@ -50,13 +53,14 @@ const columns = [
 	},
 	{
 		title: 'When',
-		dataIndex: 'when',
-		key: 'when'
+		dataIndex: 'created_at',
+		key: 'created_at'
 	},
 	{
 		title: 'Description',
 		dataIndex: 'description',
-		key: 'description'
+		key: 'description',
+		render: description => (description ? description : 'N/A')
 	},
 	{
 		title: 'Status',
@@ -65,81 +69,18 @@ const columns = [
 		render: handleRender
 	}
 ]
-const data = [
-	{
-		key: '1',
-		id: '#1',
-		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00 PM',
-		description:
-			'Progressively promote out-of-the-box results without focused initiatives appropriately',
-		status: 'Not Resolved'
-	},
-	{
-		key: '2',
-		id: '#2',
-		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00 PM',
-		description:
-			'Progressively promote out-of-the-box results without focused initiatives appropriately',
-		status: 'In Progress'
-	},
-	{
-		key: '3',
-		id: '#3',
-		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00 PM',
-		description:
-			'Progressively promote out-of-the-box results without focused initiatives appropriately',
-		status: 'Acknowledged'
-	},
-	{
-		key: '4',
-		id: '#4',
-		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00 PM',
-		description:
-			'Progressively promote out-of-the-box results without focused initiatives appropriately',
-		status: 'Resolved'
-	},
-	{
-		key: '5',
-		id: '#5',
-		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00 PM',
-		description:
-			'Progressively promote out-of-the-box results without focused initiatives appropriately',
-		status: 'Not Resolved'
-	},
-	{
-		key: '6',
-		id: '#6',
-		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00 PM',
-		description:
-			'Progressively promote out-of-the-box results without focused initiatives appropriately',
-		status: 'In Progress'
-	},
-	{
-		key: '7',
-		id: '#7',
-		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00 PM',
-		description:
-			'Progressively promote out-of-the-box results without focused initiatives appropriately',
-		status: 'Acknowledged'
-	},
-	{
-		key: '8',
-		id: '#8',
-		name: 'Session id of data files does not match S3key',
-		when: 'April 23, 01:00 PM',
-		description:
-			'Progressively promote out-of-the-box results without focused initiatives appropriately',
-		status: 'Resolved'
-	}
-]
-const TableOfBugs = () => (
-	<Table columns={columns} dataSource={data} pagination={false} />
+const TableOfBugs = ({ issueList }) => (
+	<Table
+		loading={!issueList}
+		columns={columns}
+		dataSource={issueList}
+		pagination={false}
+	/>
 )
-export default TableOfBugs
+const mapStateToProps = state => ({
+	issueList: state.getIn(['bugStack', 'issueList', 'data', 'data'])
+})
+export default connect(
+	mapStateToProps,
+	null
+)(TableOfBugs)

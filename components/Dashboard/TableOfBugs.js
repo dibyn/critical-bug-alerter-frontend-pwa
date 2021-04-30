@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Table, Select } from 'antd'
+import { changeStatusIssueRequest } from 'actions/bugStack.actions'
 const obj = {
 	'Not Resolved': 'status-not-resolved',
 	'In Progress': 'status-in-progress',
@@ -7,6 +9,7 @@ const obj = {
 	Resolved: 'status-resolved'
 }
 const DropdownSelect = ({ status }) => {
+	const dispatch = useDispatch()
 	const [__status, handleChange] = useState(status)
 	return (
 		<Select
@@ -14,7 +17,15 @@ const DropdownSelect = ({ status }) => {
 			style={{ width: 146 }}
 			dropdownClassName="status-list"
 			className={obj[__status]}
-			onChange={value => handleChange(value)}
+			onChange={value => {
+				handleChange(value)
+				dispatch(
+					changeStatusIssueRequest({
+						issueId: 2,
+						params: { status: 'In Progress' }
+					})
+				)
+			}}
 		>
 			{['Not Resolved', 'In Progress', 'Acknowledged', 'Resolved'].map(v => (
 				<Option value={v} key={v}>

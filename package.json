@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "NEXT_PUBLIC_API_URL = 'https://bug-alert-systemm.herokuapp.com' next start",
     "lint": "eslint ./components/** ./pages/** -c .eslintrc --fix --ext js,jsx"
   },
   "keywords": [],

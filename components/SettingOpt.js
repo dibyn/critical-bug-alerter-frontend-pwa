@@ -17,7 +17,7 @@ const SettingOpt = ({ configKey }) => {
 					)
 				}
 				defaultValue={configKey}
-				suffix="millieSec"
+				suffix="ms"
 			/>
 		</div>
 	)

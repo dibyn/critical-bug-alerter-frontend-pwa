@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
+import Router from 'next/router'
 import Layout from 'components/layout'
 import Dashboard from 'components/Dashboard'
-import Router from 'next/router'
 const IndexPage = props => {
 	useEffect(() => {
 		if (

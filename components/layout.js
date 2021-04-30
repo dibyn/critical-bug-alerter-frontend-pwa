@@ -12,9 +12,9 @@ const MainLayout = props => {
 	const { Page, title } = props
 	const [visible, onVisibleChange] = useState(false)
 	const handleLogout = () => {
-		dispatch(logout())
 		localStorage.clear('authToken')
 		Router.push('/login')
+		dispatch(logout())
 	}
 	return (
 		<div>

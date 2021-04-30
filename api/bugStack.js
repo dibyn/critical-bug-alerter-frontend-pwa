@@ -1,7 +1,7 @@
 import axios from 'axios'
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 const ISSUE_LIST_URL = API_URL + `/issue/list`
-const ISSUE_GRAPH_URL = API_URL + `/issue/graph`
+const ISSUE_GRAPH_URL = API_URL + `/issue/graph-plot`
 const ISSUE_STATUS_LIST_URL = API_URL + `/issue/status`
 const CREATE_ISSUE_URL = API_URL + `/create/issue`
 const ISSUE_GENERATE_URL = API_URL + `/generate/issue`

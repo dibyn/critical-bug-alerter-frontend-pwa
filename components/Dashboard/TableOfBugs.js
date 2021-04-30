@@ -54,7 +54,8 @@ const columns = [
 	{
 		title: 'Level',
 		dataIndex: 'level',
-		key: 'level'
+		key: 'level',
+		render: (level) => <>{level.toUpperCase()}</>
 	},
 	{
 		title: 'When',

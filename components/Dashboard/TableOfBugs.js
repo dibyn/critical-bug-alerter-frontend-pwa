@@ -1,19 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Table, Select } from 'antd'
-const DropdownSelect = ({ status }) => (
-	<Select
-		defaultValue={status}
-		style={{ width: 146 }}
-		dropdownClassName="status-list"
-		className="status-acknowledged"
-	>
-		{['Not Resolved', 'In Progress', 'Acknowledged', 'Resolved'].map(v => (
-			<Option value={v} key={v}>
-				{v}
-			</Option>
-		))}
-	</Select>
-)
+const obj = {
+	'Not Resolved': 'status-not-resolved',
+	'In Progress': 'status-in-progress',
+	Acknowledged: 'status-acknowledged',
+	Resolved: 'status-resolved'
+}
+const DropdownSelect = ({ status }) => {
+	const [__status, handleChange] = useState(status)
+	return (
+		<Select
+			defaultValue={__status}
+			style={{ width: 146 }}
+			dropdownClassName="status-list"
+			className={obj[__status]}
+			onChange={value => handleChange(value)}
+		>
+			{['Not Resolved', 'In Progress', 'Acknowledged', 'Resolved'].map(v => (
+				<Option value={v} key={v}>
+					{v}
+				</Option>
+			))}
+		</Select>
+	)
+}
 const handleRender = status => <DropdownSelect status={status} />
 const Option = Select.Option
 const columns = [
@@ -118,5 +128,7 @@ const data = [
 		status: 'Resolved'
 	}
 ]
-const TableOfBugs = () => <Table columns={columns} dataSource={data} />
+const TableOfBugs = () => (
+	<Table columns={columns} dataSource={data} pagination={false} />
+)
 export default TableOfBugs

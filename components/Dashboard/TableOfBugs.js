@@ -61,7 +61,7 @@ const columns = [
 		dataIndex: 'created_at',
 		key: 'created_at',
 		sorter: (a, b) => moment(a.last_login).unix() - moment(b.last_login).unix(),
-		sortOrder: 'descend'
+		defaultSortOrder: 'descend'
 	},
 	{
 		title: 'Description',

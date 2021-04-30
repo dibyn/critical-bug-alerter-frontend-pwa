@@ -3,6 +3,7 @@ import MainHead from 'components/head'
 import { RowCenterDiv } from './customComponent'
 import { Radio, Dropdown, Input, Button } from 'antd'
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
+import Router from 'next/router'
 const MainLayout = props => {
 	const { Page, title } = props
 	const settingOpt = (
@@ -63,7 +64,10 @@ const MainLayout = props => {
 							</Dropdown>
 						</li>
 						<li>
-							<a href="#">
+							<a onClick={() => {
+								localStorage.clear('authToken')
+								Router.push('/login')
+							}} href="#">
 								<LogoutOutlined />
 							</a>
 						</li>

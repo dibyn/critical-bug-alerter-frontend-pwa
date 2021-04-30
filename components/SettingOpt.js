@@ -6,7 +6,7 @@ const SettingOpt = ({ configKey }) => {
 	const dispatch = useDispatch()
 	return (
 		<div className="setting-body">
-			<p>Waiting times to trigger IoT device after bug appear</p>
+			<p>Trigger Alarm After</p>
 			<Input
 				onChange={e =>
 					dispatch(

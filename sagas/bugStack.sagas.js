@@ -1,6 +1,7 @@
 import { all, call, put, takeEvery } from 'redux-saga/effects'
 import * as actionTypes from 'constants/bugStack.constants'
 import {
+	fetchIssueListRequest,
 	fetchIssueListSuccess,
 	fetchIssueListFailed,
 
@@ -35,6 +36,7 @@ function* changeStatusIssue({ params }) {
 	try {
 		const response = yield call(changeStatusIssueApi, params)
 		yield put(changeStatusIssueSuccess(response))
+		yield put(fetchIssueListRequest())
 	} catch (error) {
 		yield put(changeStatusIssueFailed(error))
 	}

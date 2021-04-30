@@ -78,7 +78,7 @@ const MainLayout = props => {
 				<Page {...props} />
 			</RowCenterDiv>
 			<footer>
-				<RowCenterDiv>{'Developed by Team Bravo 2021'}</RowCenterDiv>
+				<RowCenterDiv>Developed by <strong>Team Bravo</strong></RowCenterDiv>
 			</footer>
 		</div>
 	)

@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react'
-import Head from 'next/head'
+import MainHead from 'components/head'
 import { RowCenterDiv } from './customComponent'
 import { Radio, Dropdown, Input, Button } from 'antd'
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
@@ -15,21 +15,7 @@ const MainLayout = props => {
 	const [visible, onVisibleChange] = useState(false)
 	return (
 		<div>
-			<Head>
-				<title>{title}</title>
-				<meta charSet="utf-8" />
-				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="16x16"
-					href={'icons/favicon.png'}
-				/>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
-					rel="stylesheet"
-				/>
-			</Head>
+			<MainHead title={title} />
 			<header className="global-header">
 				<div className="logo">
 					<a href="#">

@@ -4,3 +4,9 @@ export const NextState = fromJS({
     nextData: {},
   },
 })
+export const BugStackState = fromJS({
+  bugStack: {
+    issueList: {},
+    issueGraph: {}
+  }
+})

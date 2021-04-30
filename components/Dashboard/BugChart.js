@@ -1,18 +1,13 @@
 import React from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-
+if (typeof window !== 'undefined') {
+	require('highcharts/modules/data')(Highcharts)
+}
 const BugChart = () => (
 	<HighchartsReact
 		highcharts={Highcharts}
 		options={{
-			title: {
-				text: 'Bug Occurences',
-				align: 'left',
-				style: {
-					fontSize: '16px',
-				}
-			},
 			xAxis: {
 				type: 'datetime',
 				categories: [
@@ -41,37 +36,20 @@ const BugChart = () => (
 					'03:00',
 					'04:00',
 					'05:00'
-				]
-			},
-			plotOptions: {
-				series: {
-					color: '#EB5757'
-				}
-			},
-			 legend: {
-        enabled: false
-    },
-			yAxis: {
-				title: {
-					text: ''
-				},
-				gridLineDashStyle: 'dot',
-				gridLineWidth: 2
-			},
-			tooltip: {
-				valueSuffix: '°C'
+				],
+				crosshair: true
 			},
 			series: [
 				{
-					name: '',
+					// name: 'Session id of data files does not match S3key',
 					data: [
-						0,
+						12,
 						1,
 						0,
 						2,
+						6,
 						0,
-						0,
-						5,
+						11,
 						1,
 						0,
 						0,
@@ -91,7 +69,38 @@ const BugChart = () => (
 						1
 					]
 				}
-			]
+			],
+			tooltip: {
+				backgroundColor: {
+					linearGradient: [0, 0, 0, 60],
+					stops: [[0, '#FFFFFF'], [1, '#E0E0E0']]
+				},
+				borderWidth: 1,
+				borderColor: '#AAA'
+			},
+			title: {
+				text: 'Bug Occurrences',
+				align: 'left',
+				style: {
+					fontSize: '16px'
+				}
+			},
+			plotOptions: {
+				series: {
+					color: '#EB5757'
+				}
+			},
+			legend: {
+				enabled: false
+			},
+			yAxis: {
+				title: {
+					text: ''
+				},
+				gridLineDashStyle: 'dot',
+				gridLineWidth: 2,
+				crosshair: true
+			}
 		}}
 		containerProps={{ className: 'chartContainer' }}
 	/>

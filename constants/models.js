@@ -1,12 +1,10 @@
 import { fromJS } from 'immutable'
 export const NextState = fromJS({
-  next: {
-    nextData: {},
-  },
+	next: {
+		nextData: {}
+	}
 })
 export const BugStackState = fromJS({
-  bugStack: {
-    issueList: {},
-    issueGraph: {}
-  }
+	issueList: {},
+	issueGraph: {}
 })

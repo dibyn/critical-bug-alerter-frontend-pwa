@@ -6,7 +6,7 @@ const SettingOpt = ({ configKey }) => {
 	const dispatch = useDispatch()
 	return (
 		<div className="setting-body">
-			<p>Trigger Alarm After</p>
+			<p>Trigger alarm after</p>
 			<Input
 				onChange={e =>
 					dispatch(
@@ -17,7 +17,7 @@ const SettingOpt = ({ configKey }) => {
 					)
 				}
 				defaultValue={configKey}
-				suffix="Sec"
+				suffix="millieSec"
 			/>
 		</div>
 	)

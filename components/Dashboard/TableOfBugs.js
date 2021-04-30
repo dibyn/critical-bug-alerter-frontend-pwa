@@ -5,7 +5,7 @@ const DropdownSelect = ({ status }) => (
 		defaultValue={status}
 		style={{ width: 146 }}
 		dropdownClassName="status-list"
-		className="status-in-progress"
+		className="status-acknowledged"
 	>
 		{['Not Resolved', 'In Progress', 'Acknowledged', 'Resolved'].map(v => (
 			<Option value={v} key={v}>

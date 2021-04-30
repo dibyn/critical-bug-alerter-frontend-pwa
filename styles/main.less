@@ -35,6 +35,9 @@ body {
 		flex: 1;
 		display: flex;
 		justify-content: center;
+		.ant-radio{
+			top: -2px;
+		}
 	}
 	.top-nav {
 		flex: 1;
@@ -157,9 +160,15 @@ body {
 	padding: 10px;
 	border-radius: 5px;
 	width: 280px;
-	line-height: normal;
+	p{
+		line-height: normal;
+	}
 	.ant-input-affix-wrapper{
 		margin-bottom: 10px;
+		border-radius: 5px;
+		&:hover{
+			border-color: @dark-light;
+		}
 	}
 }
 footer{
@@ -172,7 +181,29 @@ footer{
 .ant-btn{
 	border-radius: 4px;
 	&.ant-btn-primary{
-		background-color: @blue;
-		border-color: @blue;
+		background-color: @red;
+		border-color: @red;
 	}
+}
+.ant-radio-checked{
+	&:after{
+		border-color: @red;
+	}
+	.ant-radio-inner{
+		border-color: @red;
+		&:after{
+			background-color: @red;
+		}
+	}
+}
+.ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner{
+	border-color: @red;
+}
+.ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused{
+	border-color: @dark-light;
+	box-shadow: none;
+	outline: 0;
+}
+.ant-select-dropdown{
+	padding: 0;
 }

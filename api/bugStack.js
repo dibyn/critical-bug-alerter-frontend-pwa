@@ -65,3 +65,23 @@ export const issueStatusListApi = () => {
 			throw error
 		})
 }
+export const getConfigKeyApi = (config_key) => {
+	return axios
+		.get(`${API_URL}/config/${config_key}`, {})
+		.then(response => {
+			return response.data
+		})
+		.catch(error => {
+			throw error
+		})
+}
+export const updateConfigKeyValueApi = (params) => {
+	return axios
+		.post(`${API_URL}/config`, params)
+		.then(response => {
+			return response.data
+		})
+		.catch(error => {
+			throw error
+		})
+}

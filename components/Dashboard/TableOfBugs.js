@@ -19,7 +19,6 @@ const DropdownSelect = ({ status, elements }) => {
 			dropdownClassName="status-list"
 			className={obj[__status]}
 			onChange={statusValue => {
-				console.log(statusValue, 'value')
 				handleChange(statusValue)
 				dispatch(
 					changeStatusIssueRequest({
@@ -62,7 +61,7 @@ const columns = [
 		dataIndex: 'created_at',
 		key: 'created_at',
 		sorter: (a, b) => moment(a.last_login).unix() - moment(b.last_login).unix(),
-		sortOrder: 'descend'
+		defaultSortOrder: 'descend'
 	},
 	{
 		title: 'Description',

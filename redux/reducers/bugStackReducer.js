@@ -28,7 +28,25 @@ export default handleActions(
 		},
 		[actionTypes.CHANGE_STATUS_ISSUE_FAILED]: (state, action) => {
 			return state.mergeIn(['bugStack'], {
-				changeIssueStatus: action.error
+				changeIssueStatusError: action.error
+			})
+		},
+		[actionTypes.FETCH_CONFIG_KEY_SUCCESS]: (state, action) => {
+			return state.mergeIn(['configKey'], action.data)
+		},
+		[actionTypes.FETCH_CONFIG_KEY_FAILED]: (state, action) => {
+			return state.mergeIn(['bugStack'], {
+				configKeyFailed: action.error
+			})
+		},
+		[actionTypes.UPDATE_CONFIG_KEY_SUCCESS]: (state, action) => {
+			return state.mergeIn(['bugStack'], {
+				updateKeySuccess: action.data
+			})
+		},
+		[actionTypes.UPDATE_CONFIG_KEY_FAILED]: (state, action) => {
+			return state.mergeIn(['bugStack'], {
+				updateKeyFailed: action.error
 			})
 		}
 	},

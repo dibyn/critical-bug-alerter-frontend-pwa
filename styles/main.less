@@ -3,10 +3,10 @@
 @dark-light: #1f2029;
 @light: #bcbcbf;
 @white: #ffffff;
-@red: #EB5757;
-@green: #6FC476;
-@blue: #2D5FE0;
-@orange: #FE9801;
+@red: #eb5757;
+@green: #6fc476;
+@blue: #2d5fe0;
+@orange: #fe9801;
 
 // =========
 html,
@@ -35,6 +35,9 @@ body {
 		flex: 1;
 		display: flex;
 		justify-content: center;
+		.ant-radio {
+			top: -2px;
+		}
 	}
 	.top-nav {
 		flex: 1;
@@ -70,20 +73,20 @@ body {
 		background-color: @dark-light;
 		margin-bottom: 20px;
 		padding: 20px;
-		.highcharts-background{
+		.highcharts-background {
 			fill: transparent;
 		}
-		.highcharts-grid-line{
+		.highcharts-grid-line {
 			stroke: #262731;
 		}
-		.highcharts-title{
+		.highcharts-title {
 			fill: @white !important;
 			color: @white !important;
 		}
-		.highcharts-credits{
+		.highcharts-credits {
 			display: none;
 		}
-		.highcharts-axis-line{
+		.highcharts-axis-line {
 			stroke: #353535;
 		}
 	}
@@ -98,81 +101,188 @@ body {
 	.ant-table-tbody > tr > td {
 		border-bottom: 8px solid @dark;
 	}
-	.ant-table-thead > tr > th{
+	.ant-table-thead > tr > th {
 		background-color: @dark;
 		color: @light;
 		border-bottom: 0;
 	}
-
 }
-.ant-table-tbody > tr.ant-table-row:hover > td{
+.ant-table-tbody > tr.ant-table-row:hover > td {
 	background: #ff333324;
 }
-.ant-select{
-	.ant-select-selector{
+.ant-select {
+	.ant-select-selector {
 		border: 1px solid #fff !important;
 		border-radius: 50px !important;
 		background-color: transparent !important;
 	}
 }
-.status-not-resolved{
+.status-not-resolved {
 	color: @red !important;
-	.ant-select-selector{
+	.ant-select-selector {
 		border-color: @red !important;
 	}
-	.ant-select-arrow{
+	.ant-select-arrow {
 		color: @red !important;
 	}
 }
-.status-resolved{
+.status-resolved {
 	color: @green !important;
-	.ant-select-selector{
+	.ant-select-selector {
 		border-color: @green !important;
 	}
-	.ant-select-arrow{
+	.ant-select-arrow {
 		color: @green !important;
 	}
 }
-.status-acknowledged{
+.status-acknowledged {
 	color: @blue!important;
-	.ant-select-selector{
+	.ant-select-selector {
 		border-color: @blue!important;
 	}
-	.ant-select-arrow{
+	.ant-select-arrow {
 		color: @blue!important;
 	}
 }
-.status-in-progress{
+.status-in-progress {
 	color: @orange !important;
-	.ant-select-selector{
+	.ant-select-selector {
 		border-color: @orange !important;
 	}
-	.ant-select-arrow{
+	.ant-select-arrow {
 		color: @orange !important;
 	}
 }
 
-.setting-body{
+.setting-body {
 	background-color: @white;
 	padding: 10px;
 	border-radius: 5px;
 	width: 280px;
-	line-height: normal;
-	.ant-input-affix-wrapper{
+	p {
+		line-height: normal;
+	}
+	.ant-input-affix-wrapper {
 		margin-bottom: 10px;
+		border-radius: 5px;
+		&:hover {
+			border-color: @dark-light;
+		}
 	}
 }
-footer{
+footer {
 	padding-bottom: 20px;
-	.row-center{
+	.row-center {
 		text-align: center;
 		color: @light;
 	}
 }
-.ant-btn{
+.ant-btn {
 	border-radius: 4px;
-	&.ant-btn-primary{
-		background-color: @blue;
-		border-color: @blue;
+	&.ant-btn-primary {
+		background-color: @red;
+		border-color: @red;
 	}
+}
+.ant-radio-checked {
+	&:after {
+		border-color: @red;
+	}
+	.ant-radio-inner {
+		border-color: @red;
+		&:after {
+			background-color: @red;
+		}
+	}
+}
+.ant-radio-wrapper:hover .ant-radio,
+.ant-radio:hover .ant-radio-inner,
+.ant-radio-input:focus + .ant-radio-inner {
+	border-color: @red;
+}
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+	border-color: @dark-light;
+	box-shadow: none;
+	outline: 0;
+}
+.ant-select-dropdown {
+	padding: 0;
+}
+
+.exterior-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	.ext-left {
+		flex: 1;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.logo-box{
+			svg{
+				max-width: 200px;
+			}
+		}
+	}
+	.ext-right{
+		background-color: @dark-light;
+    flex: 2;
+    height: 100%;
+		width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+	.ant-input-password,
+	.ant-input{
+		height: 40px;
+		width: 270px;
+	}
+	.ant-input-password{
+		.ant-input{
+			height: auto;
+		}
+	}
+	.ant-btn{
+		width: 100%;
+		height: 40px;
+		text-transform: uppercase;
+	}
+	.ant-form label{
+		color: @light;
+	}
+	::-webkit-input-placeholder {
+		color: @dark;
+		font-size: 14px;
+	}
+	::-moz-placeholder {
+		color: @dark;
+		font-size: 14px;
+	}
+	:-ms-input-placeholder {
+		color: @dark;
+		font-size: 14px;
+	}
+	:-moz-placeholder {
+		color: @dark;
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 768px) {
+  .exterior-wrapper {
+    flex-direction: column;
+    .ext-left {
+      flex: 0;
+      padding: 30px 10px;
+      svg {
+        width: 80px;
+        height: auto;
+      }
+    }
+  }
 }

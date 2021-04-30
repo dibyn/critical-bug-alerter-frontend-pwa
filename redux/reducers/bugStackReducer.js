@@ -1,8 +1,12 @@
 import * as actionTypes from 'constants/bugStack.constants'
+import * as commonTypes from 'constants/common.constants'
 import { BugStackState } from 'constants/models'
 import { handleActions } from 'redux-actions'
 export default handleActions(
 	{
+		[commonTypes.LOGOUT]: state => {
+			return BugStackState
+		},
 		[actionTypes.FETCH_ISSUE_LIST_SUCCESS]: (state, action) => {
 			return state.mergeIn(['issueList'], action.data)
 		},

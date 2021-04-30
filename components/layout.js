@@ -1,13 +1,21 @@
 import React, { Component, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import MainHead from 'components/head'
 import { RowCenterDiv } from './customComponent'
-import { Radio, Dropdown, Input, Button } from 'antd'
+import { Dropdown } from 'antd'
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
 import Router from 'next/router'
 import SettingOpt from './SettingOpt'
+import { logout } from 'actions/bugStack.actions'
 const MainLayout = props => {
+	const dispatch = useDispatch()
 	const { Page, title } = props
 	const [visible, onVisibleChange] = useState(false)
+	const handleLogout = () => {
+		dispatch(logout())
+		localStorage.clear('authToken')
+		Router.push('/login')
+	}
 	return (
 		<div>
 			<MainHead title={title} />
@@ -58,10 +66,7 @@ const MainLayout = props => {
 							</Dropdown>
 						</li>
 						<li>
-							<a onClick={() => {
-								localStorage.clear('authToken')
-								Router.push('/login')
-							}} href="#">
+							<a onClick={() => handleLogout()} href="#">
 								<LogoutOutlined />
 							</a>
 						</li>
@@ -72,7 +77,9 @@ const MainLayout = props => {
 				<Page {...props} />
 			</RowCenterDiv>
 			<footer>
-				<RowCenterDiv>Developed by <strong>Team Bravo</strong></RowCenterDiv>
+				<RowCenterDiv>
+					Developed by <strong>Team Bravo</strong>
+				</RowCenterDiv>
 			</footer>
 		</div>
 	)

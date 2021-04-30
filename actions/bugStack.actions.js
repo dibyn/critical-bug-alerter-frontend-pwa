@@ -1,5 +1,9 @@
 import * as actionTypes from 'constants/bugStack.constants'
+import * as commonTypes from 'constants/common.constants'
 
+export const logout = () => ({
+	type: commonTypes.LOGOUT
+})
 export const fetchIssueListRequest = params => ({
 	type: actionTypes.FETCH_ISSUE_LIST_REQUEST,
 	params

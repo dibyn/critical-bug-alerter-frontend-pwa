@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect, useDispatch } from 'react-redux'
-import { Input, Button } from 'antd'
+import { Input } from 'antd'
 import { updateConfigKeyRequest } from 'actions/bugStack.actions'
 const SettingOpt = ({ configKey }) => {
 	const dispatch = useDispatch()
@@ -19,7 +19,6 @@ const SettingOpt = ({ configKey }) => {
 				defaultValue={configKey}
 				suffix="Sec"
 			/>
-			<Button type="primary">Save</Button>
 		</div>
 	)
 }

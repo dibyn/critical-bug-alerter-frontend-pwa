@@ -4,16 +4,12 @@ import {
 	fetchIssueListRequest,
 	fetchIssueListSuccess,
 	fetchIssueListFailed,
-
 	fetchIssueGraphSuccess,
 	fetchIssueGraphFailed,
-
-  changeStatusIssueSuccess,
-  changeStatusIssueFailed,
-
+	changeStatusIssueSuccess,
+	changeStatusIssueFailed,
 	fetchConfigKeySuccess,
 	fetchConfigKeyFailed,
-
 	updateConfigKeySuccess,
 	updateConfigKeyFailed
 } from 'actions/bugStack.actions'
@@ -71,7 +67,7 @@ function* watchBugStack() {
 		takeEvery(actionTypes.FETCH_ISSUE_GRAPH_REQUEST, fetchIssueGraph),
 		takeEvery(actionTypes.CHANGE_STATUS_ISSUE_REQUEST, changeStatusIssue),
 		takeEvery(actionTypes.FETCH_CONFIG_KEY_REQUEST, fetchConfigKey),
-		takeEvery(actionTypes.UPDATE_CONFIG_KEY_REQUEST, updateConfigKeyValue),
+		takeEvery(actionTypes.UPDATE_CONFIG_KEY_REQUEST, updateConfigKeyValue)
 	])
 }
 export default watchBugStack

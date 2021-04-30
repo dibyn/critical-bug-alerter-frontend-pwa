@@ -8,7 +8,6 @@ const BugChart = () => (
 	<HighchartsReact
 		highcharts={Highcharts}
 		options={{
-
 			xAxis: {
 				type: 'datetime',
 				categories: [
@@ -72,12 +71,12 @@ const BugChart = () => (
 				}
 			],
 			tooltip: {
-        backgroundColor: '',
-        style: {
-            color: '#181a23',
-            fontWeight: '',
-        }
-    },
+				backgroundColor: '',
+				style: {
+					color: '#181a23',
+					fontWeight: ''
+				}
+			},
 			title: {
 				text: 'Bug Occurrences',
 				align: 'left',

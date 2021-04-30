@@ -53,6 +53,11 @@ const columns = [
 		key: 'name'
 	},
 	{
+		title: 'Level',
+		dataIndex: 'level',
+		key: 'level'
+	},
+	{
 		title: 'When',
 		dataIndex: 'created_at',
 		key: 'created_at',

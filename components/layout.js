@@ -39,12 +39,12 @@ const MainLayout = props => {
 					</a>
 				</div>
 				<div className="data-filter">
-					<Radio.Group>
+					{/* <Radio.Group>
 						<Radio value={1} checked>
 							Last 24 hrs
 						</Radio>
 						<Radio value={2}>Last 7 days</Radio>
-					</Radio.Group>
+					</Radio.Group> */}
 				</div>
 				<div className="top-nav">
 					<ul>

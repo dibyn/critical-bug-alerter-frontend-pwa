@@ -1,7 +1,9 @@
 import React from 'react'
+import { Spin } from 'antd'
 import { connect } from 'react-redux'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { LoadingOutlined } from '@ant-design/icons'
 if (typeof window !== 'undefined') {
 	require('highcharts/modules/data')(Highcharts)
 }
@@ -40,11 +42,16 @@ const defaultOptions = {
 const BugChart = ({ graphOptions }) => {
 	const options = { ...defaultOptions, ...graphOptions }
 	return (
-		<HighchartsReact
-			highcharts={Highcharts}
-			options={options}
-			containerProps={{ className: 'chartContainer' }}
-		/>
+		<Spin
+			// indicator={<LoadingOutlined style={{ color: '#fe9801' }} />}
+			spinning={!graphOptions}
+		>
+			<HighchartsReact
+				highcharts={Highcharts}
+				options={options}
+				containerProps={{ className: 'chartContainer' }}
+			/>
+		</Spin>
 	)
 }
 const mapStateToProps = state => ({

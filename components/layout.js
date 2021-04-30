@@ -4,15 +4,9 @@ import { RowCenterDiv } from './customComponent'
 import { Radio, Dropdown, Input, Button } from 'antd'
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
 import Router from 'next/router'
+import SettingOpt from './SettingOpt'
 const MainLayout = props => {
 	const { Page, title } = props
-	const settingOpt = (
-		<div className="setting-body">
-			<p>Waiting time to trigger IoT device after bug appear</p>
-			<Input suffix="Sec" />
-			<Button type="primary">Save</Button>
-		</div>
-	)
 	const [visible, onVisibleChange] = useState(false)
 	return (
 		<div>
@@ -52,7 +46,7 @@ const MainLayout = props => {
 							<Dropdown
 								visible={visible}
 								onVisibleChange={onVisibleChange}
-								overlay={settingOpt}
+								overlay={<SettingOpt />}
 								trigger={['click']}
 							>
 								<a

@@ -4,7 +4,6 @@ import { Form, Input, Button, Checkbox, message } from 'antd'
 import Router from 'next/router'
 const Login = () => {
 	const onFinish = values => {
-		console.log('Success:', values)
 		if (
 			values.email === 'dibyn@bugstack.com' &&
 			values.password === 'bugStack1!'
@@ -16,9 +15,7 @@ const Login = () => {
 				'Incorrect Email or Password!, please try again with correct credentials'
 			)
 	}
-	const onFinishFailed = errorInfo => {
-		console.log('Failed:', errorInfo)
-	}
+	const onFinishFailed = errorInfo => errorInfo
 	return (
 		<>
 			<MainHead title={'Login'} />

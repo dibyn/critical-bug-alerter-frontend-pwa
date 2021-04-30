@@ -9,12 +9,20 @@ import {
 	fetchIssueGraphFailed,
 
   changeStatusIssueSuccess,
-  changeStatusIssueFailed
+  changeStatusIssueFailed,
+
+	fetchConfigKeySuccess,
+	fetchConfigKeyFailed,
+
+	updateConfigKeySuccess,
+	updateConfigKeyFailed
 } from 'actions/bugStack.actions'
 import {
 	fetchIssueListApi,
 	fetchIssueGraphApi,
-	changeStatusIssueApi
+	changeStatusIssueApi,
+	getConfigKeyApi,
+	updateConfigKeyValueApi
 } from 'api/bugStack'
 function* fetchIssueList() {
 	try {
@@ -41,11 +49,29 @@ function* changeStatusIssue({ params }) {
 		yield put(changeStatusIssueFailed(error))
 	}
 }
+function* fetchConfigKey({ params }) {
+	try {
+		const response = yield call(getConfigKeyApi, params)
+		yield put(fetchConfigKeySuccess(response))
+	} catch (error) {
+		yield put(fetchConfigKeyFailed(error))
+	}
+}
+function* updateConfigKeyValue({ params }) {
+	try {
+		const response = yield call(updateConfigKeyValueApi, params)
+		yield put(updateConfigKeySuccess(response))
+	} catch (error) {
+		yield put(updateConfigKeyFailed(error))
+	}
+}
 function* watchBugStack() {
 	yield all([
 		takeEvery(actionTypes.FETCH_ISSUE_LIST_REQUEST, fetchIssueList),
 		takeEvery(actionTypes.FETCH_ISSUE_GRAPH_REQUEST, fetchIssueGraph),
-		takeEvery(actionTypes.CHANGE_STATUS_ISSUE_REQUEST, changeStatusIssue)
+		takeEvery(actionTypes.CHANGE_STATUS_ISSUE_REQUEST, changeStatusIssue),
+		takeEvery(actionTypes.FETCH_CONFIG_KEY_REQUEST, fetchConfigKey),
+		takeEvery(actionTypes.UPDATE_CONFIG_KEY_REQUEST, updateConfigKeyValue),
 	])
 }
 export default watchBugStack

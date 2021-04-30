@@ -19,7 +19,6 @@ const DropdownSelect = ({ status, elements }) => {
 			dropdownClassName="status-list"
 			className={obj[__status]}
 			onChange={statusValue => {
-				console.log(statusValue, 'value')
 				handleChange(statusValue)
 				dispatch(
 					changeStatusIssueRequest({

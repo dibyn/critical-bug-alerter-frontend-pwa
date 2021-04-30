@@ -6,5 +6,5 @@ export const NextState = fromJS({
 })
 export const BugStackState = fromJS({
 	issueList: {},
-	issueGraph: {}
+	issueGraph: {},
 })
